@@ -279,8 +279,8 @@ def check_project(project, project_dir, config, num_jobs):
         run_config["result_path"] = result_path
         run_config["coverage_dir"] = coverage_dir
         args_file, filename = tempfile.mkstemp()
-        os.write(args_file, " -Xclang -analyzer-config -Xclang record-coverage=%s "
-                 % coverage_dir)
+        #os.write(args_file, " -Xclang -analyzer-config -Xclang record-coverage=%s "
+        #         % coverage_dir)
         conf_sources = [config["CodeChecker"], project, run_config]
         os.write(args_file, collect_args("clang_sa_args", conf_sources))
         os.close(args_file)
